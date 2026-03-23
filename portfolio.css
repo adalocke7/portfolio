@@ -1,0 +1,17 @@
+* {
+    font-family: "Datatype", monospace;
+    background-color: #0d0d0d;
+    color: #00ff41;
+    margin-bottom: 20px;
+}
+
+input {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+#output p {
+    white-space: pre;
+    margin: 0;
+}
