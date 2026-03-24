@@ -27,6 +27,12 @@ window.onload = function() {
         }, cumulativeDelays[index]);
     });
 
+    this.setTimeout(enable, 4500);
+}
+
+function enable() {
+    document.getElementById('command').disabled = false;
+    document.getElementById('command').focus();
 }
 
 
