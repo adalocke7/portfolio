@@ -1,3 +1,4 @@
+
 window.onload = function() {
     const startUp = [
         "Initializing system...",
@@ -143,9 +144,6 @@ function projects() {
         "│  Validalligator (JS based vs extension)    │",
         "│  Fifa app (Web app)                        │",
         "│                                            │",
-        "│                                            │",
-        "│                                            │",
-        "│                                            │",
         "│  Type open (name) to view a project        │",
         "└────────────────────────────────────────────┘",
     ];
@@ -202,6 +200,7 @@ function skills() {
 
 function contactInfo() {
     const output = document.getElementById('output');
+    const link = "https://www.linkedin.com/in/adam-lockes"
     const contact = [
         "", 
         "┌─ Contact Me ────────────────────────────────────────┐",
@@ -209,8 +208,6 @@ function contactInfo() {
         "│  Business Email: adamlocke.2007@gmail.com           │",
         "│  Github: adalocke7                                  │",
         "│  Linkedin: https://www.linkedin.com/in/adam-lockes  │",
-        "│                                                     │",
-        "│                                                     │",
         "│                                                     │",
         "│                                                     │",
         "└─────────────────────────────────────────────────────┘",
@@ -224,7 +221,11 @@ function contactInfo() {
         setTimeout(() => {
             const p = document.createElement('p');
             p.style.margin = '0';
-            p.textContent = line;
+            if (line.includes('Linkedin')) {
+                p.innerHTML = `│  Link: <a href="${link}" target="_blank" rel="noopener noreferrer">${link}</a>`;
+            } else {
+                p.textContent = line;
+            }
             output.appendChild(p);
         }, index * 50);
     });
@@ -273,7 +274,11 @@ function openProject(name) {
     lines.forEach((line, index) => {
         setTimeout(() => {
             const p = document.createElement('p');
-            p.textContent = line;
+            if (line.includes('Link')) {
+                p.innerHTML = `│  Link: <a href="${project.link}" target="_blank" rel="noopener noreferrer">${project.link}</a>`;
+            } else {
+                p.textContent = line;
+            }
             output.appendChild(p);
         }, index * 50);
     });
