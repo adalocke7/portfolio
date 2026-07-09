@@ -37,6 +37,11 @@ function enable() {
 
 
 const input = document.getElementById('command');
+const outputs = document.getElementById('output');
+
+const autoscroll = () => {
+    outputs.scrollTop = outputs.scrollHeight;
+}
 
 input.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
@@ -200,6 +205,7 @@ function skills() {
             const p = document.createElement('p');
             p.textContent = line;
             output.appendChild(p);
+            autoscroll();
         }, index * 50);
     });
 }
@@ -213,7 +219,7 @@ function contactInfo() {
         "│                                                     │",
         "│  Business Email: adamlocke.2007@gmail.com           │",
         "│  Github: adalocke7                                  │",
-        "│  Linkedin: https://www.linkedin.com/in/adam-lockes  │",
+        "│  Linkedin: https://www.linkedin.com/in/a-locke/     │",
         "│                                                     │",
         "│                                                     │",
         "└─────────────────────────────────────────────────────┘",
@@ -235,7 +241,6 @@ function contactInfo() {
             output.appendChild(p);
         }, index * 50);
     });
-    
 }
 
 const projectList = [
