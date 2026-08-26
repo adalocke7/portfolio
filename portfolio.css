@@ -371,34 +371,43 @@ h1 em, h2 em {
     line-height: 1.7;
 }
 
-.skill-grid>div {
+.skill-groups {
     display: grid;
-    grid-template-columns: 1fr 35px;
-    gap: 15px;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 30px;
+}
+
+.skill-group {
     border-top: 1px solid var(--line);
-    padding: 15px 0;
+    padding: 20px 0 25px;
+}
+
+.skill-group h3 {
+    margin-bottom: 16px;
     font-family: 'DM Mono', monospace;
-    font-size: 12px;
-}
-
-.skill-grid b {
-    color: var(--orange);
+    font-size: 11px;
     font-weight: 400;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--orange);
 }
 
-.skill-grid i {
-    grid-column: 1/-1;
-    display: block;
-    height: 4px;
-    background: var(--line);
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.skill-grid u {
-    display: block;
-    height: 100%;
-    background: var(--ink);
-    text-decoration: none;
+.skill-tags span {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+}
+
+.certificate-group .skill-tags span {
+    border-color: var(--orange);
+    background: #fbe4da;
 }
 
 .contact-section {
@@ -503,6 +512,10 @@ footer b {
         display: block;
     }
 
+    .skill-groups {
+        grid-template-columns: 1fr;
+    }
+
     .section-heading {
         margin-bottom: 35px;
     }
@@ -557,13 +570,3 @@ footer b {
     }
 }
 
-input {
-    outline: none;
-    border: none;
-    background: transparent;
-}
-
-#output p {
-    white-space: pre;
-    margin: 0;
-}
